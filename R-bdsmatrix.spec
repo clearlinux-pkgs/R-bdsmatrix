@@ -4,14 +4,14 @@
 #
 Name     : R-bdsmatrix
 Version  : 1.3.3
-Release  : 13
+Release  : 14
 URL      : https://cran.r-project.org/src/contrib/bdsmatrix_1.3-3.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bdsmatrix_1.3-3.tar.gz
 Summary  : Routines for Block Diagonal Symmetric Matrices
 Group    : Development/Tools
 License  : LGPL-2.0 LGPL-2.1
-Requires: R-bdsmatrix-lib
-BuildRequires : clr-R-helpers
+Requires: R-bdsmatrix-lib = %{version}-%{release}
+BuildRequires : buildreq-R
 
 %description
 No detailed description available
@@ -32,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523290385
+export SOURCE_DATE_EPOCH=1552717240
 
 %install
+export SOURCE_DATE_EPOCH=1552717240
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523290385
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +71,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library bdsmatrix|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  bdsmatrix || :
 
 
 %files
@@ -100,7 +99,30 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/bdsmatrix/html/R.css
 /usr/lib64/R/library/bdsmatrix/include/bdsmatrix.h
 /usr/lib64/R/library/bdsmatrix/include/bdsmatrix_stub.h
-/usr/lib64/R/library/bdsmatrix/libs/symbols.rds
+/usr/lib64/R/library/bdsmatrix/tests/backsolvetest.R
+/usr/lib64/R/library/bdsmatrix/tests/backsolvetest.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/bdstest.R
+/usr/lib64/R/library/bdsmatrix/tests/bdstest.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/chtest.R
+/usr/lib64/R/library/bdsmatrix/tests/chtest.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/chtest2.R
+/usr/lib64/R/library/bdsmatrix/tests/chtest2.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/corner.R
+/usr/lib64/R/library/bdsmatrix/tests/corner.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/corner2.R
+/usr/lib64/R/library/bdsmatrix/tests/corner2.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/gtest.R
+/usr/lib64/R/library/bdsmatrix/tests/gtest.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/gtest2.R
+/usr/lib64/R/library/bdsmatrix/tests/gtest2.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/matrix.R
+/usr/lib64/R/library/bdsmatrix/tests/matrix.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/nullr.R
+/usr/lib64/R/library/bdsmatrix/tests/nullr.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/reconcile.R
+/usr/lib64/R/library/bdsmatrix/tests/reconcile.Rout.save
+/usr/lib64/R/library/bdsmatrix/tests/tinv.R
+/usr/lib64/R/library/bdsmatrix/tests/tinv.Rout.save
 
 %files lib
 %defattr(-,root,root,-)
