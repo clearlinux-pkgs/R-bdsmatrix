@@ -4,7 +4,7 @@
 #
 Name     : R-bdsmatrix
 Version  : 1.3.4
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/bdsmatrix_1.3-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bdsmatrix_1.3-4.tar.gz
 Summary  : Routines for Block Diagonal Symmetric Matrices
