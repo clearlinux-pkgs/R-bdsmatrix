@@ -4,7 +4,7 @@
 #
 Name     : R-bdsmatrix
 Version  : 1.3.4
-Release  : 41
+Release  : 42
 URL      : https://cran.r-project.org/src/contrib/bdsmatrix_1.3-4.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bdsmatrix_1.3-4.tar.gz
 Summary  : Routines for Block Diagonal Symmetric Matrices
@@ -33,10 +33,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1640896066
+export SOURCE_DATE_EPOCH=1640977887
 
 %install
-export SOURCE_DATE_EPOCH=1640896066
+export SOURCE_DATE_EPOCH=1640977887
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
